@@ -39,7 +39,7 @@ if ($_POST["buttonclick"]=="picsubmit"){
             }
             else
             {
-                $_FILES["file"]["name"] = $_POST["FileNumber"].' '.$_POST["FileName"].'.'.$extension;
+                $_FILES["file"]["name"] = '194801'.$_POST["FileNumber"].' '.$_POST["FileName"].'.'.$extension;
                 rename($_FILES["file"]["name"] , $_POST["FileNumber"].' '.$_POST["FileName"].'.'.$extension);
                 $fullfilename =  $dir.'/' . $_FILES["file"]["name"]; 
                 if (file_exists($dir.'/' . $_FILES["file"]["name"]))
@@ -47,8 +47,9 @@ if ($_POST["buttonclick"]=="picsubmit"){
                 unlink($dir.'/'.$_FILES["file"]["name"]);
                 }
                 move_uploaded_file($_FILES["file"]["tmp_name"],$dir.'/'.$_FILES["file"]["name"]);
-                echo "文件存储在: " . $dir. "/".$_FILES["file"]["name"];
-                echo "<img src='".$dir."/".$_FILES["file"]["name"]."' height=80%/>";
+                echo "<center><h1>提交成功</h1></center>"
+                //echo "文件存储在: " . $dir. "/".$_FILES["file"]["name"];
+                //echo "<img src='".$dir."/".$_FILES["file"]["name"]."' height=80%/>";
             }
         }
 
